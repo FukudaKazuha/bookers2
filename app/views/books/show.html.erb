@@ -1,0 +1,18 @@
+<!--投稿詳細-->
+<h1>Books</h1>
+<h2>title</h2>
+<p><%= @book.title %></p>
+
+<h2>body</h2>
+<p><%= @book.body %></p>
+
+
+
+<!--editとback-->
+ <span>
+    <%= link_to "Edit",edit_book_path(@book) %>
+  </span>
+
+  <span>
+    <%= link_to "Destroy",book_path %>
+  </span>
