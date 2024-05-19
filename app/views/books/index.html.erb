@@ -1,6 +1,10 @@
 books index(/books)
 <!--ユーザ情報-->
+<h2>name</h2>
+<p><%= @user.name %></p>
 
+<h2>introduction</h2>
+<p><%= @user.introduction %></p>
 
 <!--投稿フォーム-->
 <h1>New book</h1>
@@ -16,3 +20,13 @@ books index(/books)
 <% end %>
 
 <!--ここから右ページ-->
+<h1>投稿一覧</h1>
+
+<% @books.each do |book| %>
+
+  <p>title</p>
+  <span><%= book.title %></span>
+  
+  <p>body</p>
+  <span><%= book.body %></span>
+<% end %>
