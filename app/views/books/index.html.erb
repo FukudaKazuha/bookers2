@@ -1,10 +1,17 @@
 books index(/books)
-<!--ユーザ情報-->
-<h2>name</h2>
+<!--ユーザー情報-->
+<div>
+  <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+
+<h4>name</h4>
 <p><%= @user.name %></p>
 
-<h2>introduction</h2>
+<h4>introduction</h4>
 <p><%= @user.introduction %></p>
+
+<%= link_to 'edit', edit_user_path(current_user.id) %>
+
 
 <!--投稿フォーム-->
 <h1>New book</h1>
