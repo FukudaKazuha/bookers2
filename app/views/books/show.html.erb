@@ -1,6 +1,8 @@
-books show(/books/book_)
+books show(/books/book_id)
 
 <h1>Books</h1>
+<p><%= image_tag @user.get_profile_image(100,100) %></p>
+<p><%= @user.name %></p>
 <h2>title</h2>
 <p><%= @book.title %></p>
 
@@ -9,11 +11,15 @@ books show(/books/book_)
 
 
 
-<!--editとback-->
+<!--editとdestroy-->
  <span>
+    <% if @book.user == current_user %>
     <%= link_to "Edit",edit_book_path(@book) %>
+    <% end %>
   </span>
 
   <span>
-    <%= link_to "Destroy",book_path %>
+    <% if @book.user == current_user %>
+    <%= link_to "Destroy",book_path(@book), method: :delete %>
+    <% end %>
   </span>
