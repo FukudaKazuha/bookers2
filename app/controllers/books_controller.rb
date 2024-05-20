@@ -18,7 +18,7 @@ class BooksController < ApplicationController
     @books = Book.all 
     @book=Book.new
     @user=current_user
-    # @user = @user.profile_image   
+    # @user = @user.profile_imageこれいらんけど保留   
   end
   
   def show
