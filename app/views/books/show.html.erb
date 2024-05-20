@@ -1,5 +1,9 @@
 books show(/books/book_id)
+<!--左側ページ-->
+<!--テンプレートファイルを呼び出す-->
+ <%= render 'list', user:@user %>
 
+<!--右側ページ-->
 <h1>Books</h1>
 <p><%= image_tag @user.get_profile_image(100,100) %></p>
 <p><%= @user.name %></p>
@@ -23,3 +27,5 @@ books show(/books/book_id)
     <%= link_to "Destroy",book_path(@book), method: :delete %>
     <% end %>
   </span>
+  
+ 
