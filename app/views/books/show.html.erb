@@ -24,7 +24,7 @@ books show(/books/book_id)
 
   <span>
     <% if @book.user == current_user %>
-    <%= link_to "Destroy",book_path(@book), method: :delete %>
+    <%= link_to "Destroy",book_path(@book), method: :delete, "data-confirm"=>"本当に消しますか？" %>
     <% end %>
   </span>
   
