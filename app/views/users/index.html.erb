@@ -1,1 +1,18 @@
 users index(/users)
+<!--左側ページ-->
+<!--テンプレートファイルを呼び出す-->
+<%= render 'books/list', user:@user %>
+
+<!--右側ページ-->
+<!--全ユーザー情報-->
+<h1>Users</h1>
+<% @users.each do |user| %>
+ <p>
+ <%= image_tag @user.get_profile_image(100,100) %>
+ </p>
+ <h2>name</h2>
+ <span><%= user.name %></span>
+  
+  <%=link_to "Show", user_path(user.id) %>
+  
+<% end %>
