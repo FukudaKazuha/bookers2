@@ -7,7 +7,9 @@ books show(/books/book_id)
 <h1>Books</h1>
 
 <p><%= image_tag @user.get_image(100,100) %></p>
-<p><%= @user.name %></p>
+
+</p><%= link_to @user.name, user_path(@user.id) %></p>
+
 <h2>title</h2>
 <p><%= @book.title %></p>
 

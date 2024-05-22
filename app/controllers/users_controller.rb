@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     
     if @user.save
       redirect_to books_path
-    # リダイレクト先はマイページ
+    
     else
       render:new
     end
