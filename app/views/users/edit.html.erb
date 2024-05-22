@@ -1,6 +1,6 @@
 users edit(users/id/edit)
 <h1>User info</h1>
-<%= form_with model: User do |f| %>
+<%= form_with model: @user do |f| %>
 　<p>
   <label for="inputName">Name</label>
   <%= f.text_field :name, autofocus: true, id:"inputName"%>
@@ -10,8 +10,8 @@ users edit(users/id/edit)
   <%= f.file_field :image, accept: "image/*" %>  
   </p>
   <p>
-  <label for="inputBody">Introduction</label>
-  <%= f.text_area :body, autofocus: true, id:"inputBody"%>
+  <label for="inputIntroduction">Introduction</label>
+  <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction"%>
   </p>
  <p><%= f.submit "Update User" %></p>
 <% end %>
