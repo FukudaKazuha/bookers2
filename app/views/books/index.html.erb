@@ -1,7 +1,7 @@
 books index(/books)
 
 <!--テンプレートファイルを呼び出す-->
-<%= render 'list', user:@user %>
+<%= render 'list', user: @user %>
 
 <!--ここから右ページ-->
 <h1>Books</h1>
@@ -22,7 +22,7 @@ books index(/books)
     <% @books.each do |book| %>
     <tr>
       <td>
-      <%= image_tag @user.get_image(100,100) %>
+      <%= image_tag book.user.get_image(100,100) %>
       </td>
       <td>
         <%= link_to book.title, book_path(book.id) %>
