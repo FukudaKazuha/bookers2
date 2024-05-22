@@ -17,7 +17,8 @@ class BooksController < ApplicationController
   def index
     @books = Book.all 
     @book=Book.new
-    @user=current_user
+    @user=@book.user
+    # @user=current_user
     # @user = @user.profile_imageこれいらんけど保留   
   end
   
