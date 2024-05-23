@@ -1,4 +1,8 @@
 books show(/books/book_id)
+<!--新規投稿成功、投稿更新成功フラッシュメッセージ-->
+<div>
+  <%= flash[:notice] %>
+</div>
 <!--左側ページ-->
 <!--テンプレートファイルを呼び出す-->
  <%= render 'list', user:@user %>

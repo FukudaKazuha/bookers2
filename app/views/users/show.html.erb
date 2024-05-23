@@ -1,4 +1,8 @@
 users show(/users/id)
+<!--ログインと新規登録成功のフラッシュメッセージ-->
+<div>
+  <%= flash[:notice] %>
+</div>
 <!--左側ページ-->
 <!--テンプレートファイルを呼び出す-->
 <%= render 'books/list', user:@user %>
