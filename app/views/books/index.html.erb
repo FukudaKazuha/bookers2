@@ -1,5 +1,13 @@
 books index(/books)
-
+<!--新規投稿失敗バリデーション-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <!--テンプレートファイルを呼び出す-->
 <%= render 'list', user: @user %>
 
