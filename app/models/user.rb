@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_one_attached:image
   # アソシエーション
   has_many :books, dependent: :destroy
+  # バリデーション
+  validates :name, presence: true
+  
   
   def get_image(width, height)
     unless image.attached?

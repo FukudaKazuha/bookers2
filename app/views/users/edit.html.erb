@@ -1,5 +1,15 @@
 users edit(users/id/edit)
 <h1>User info</h1>
+<!--ユーザーのプロフィール更新失敗バリデーション-->
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>errors
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @user do |f| %>
 　<p>
   <label for="inputName">Name</label>

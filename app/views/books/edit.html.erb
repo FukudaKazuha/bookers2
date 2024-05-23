@@ -1,5 +1,14 @@
 books edit(/books/book_id/edit
 <h1>Editing Book</h1>
+<!--投稿の更新失敗バリデーション-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_with model: @book do |f| %>
  <p>
