@@ -36,7 +36,8 @@
           <%= link_to "Home", root_path %>
         </li>
         <li>
-          <%= link_to "About", homes_about_path %>
+          <%= link_to "About", about_path %>
+          <!--homes_about_path-->
         </li>
         <li>
           <%= link_to "Sign up", new_user_registration_path %>
@@ -46,6 +47,16 @@
         </li>
       <% end %>
     </header>
+    
     <%= yield %>
+    <footer>
+      <div class="container mt-5">
+       <div class="row">
+        <div class="mx-auto">
+         <p>CopyRight Infratop.inc</p>
+        </div>
+       </div>
+      </div>
+    </footer>
   </body>
 </html>
