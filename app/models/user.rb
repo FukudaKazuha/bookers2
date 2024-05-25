@@ -9,8 +9,9 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :books, dependent: :destroy
   # バリデーション
-  validates :name, presence: true
-  
+  # 名前・一意性、文字数２〜２０
+  validates :name, presence: true, uniqueness: true, length: { in: 2..20 }
+  validates :introduction,length: { maximum: 50 }
   
   def get_image(width, height)
     unless image.attached?
