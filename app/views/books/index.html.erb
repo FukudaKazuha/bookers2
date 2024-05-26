@@ -1,8 +1,5 @@
 books index(/books)
 <body>
-  <header>
-    
-  </header>
   <main>
   <!--新規投稿失敗バリデーション-->
   <% if @book.errors.any? %>
@@ -18,7 +15,7 @@ books index(/books)
   
   <!--ここから右ページ-->
   <h1>Books</h1>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th colspan="1"></th>

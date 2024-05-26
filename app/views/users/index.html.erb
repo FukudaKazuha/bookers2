@@ -1,6 +1,5 @@
 users index(/users)
 <body>
- <header></header>
  <main>
 <!--左側ページ-->
 <!--テンプレートファイルを呼び出す-->
@@ -8,9 +7,9 @@ users index(/users)
 
 <!--右側ページ-->
 <!--全ユーザー情報-->
-<h1>Users</h1>
-<table>
-  <thead>
+ <h1>Users</h1>
+  <table class="table">
+   <thead>
     <tr>
       <th>
         image
@@ -20,25 +19,25 @@ users index(/users)
       </th>
       <th colspan="1"></th>
     </tr>
-  </thead>
+   </thead>
   
-  <tbody>
-  <% @users.each do |user| %>
-  <tr>
-   <td>
-   <%= image_tag user.get_profile_image(100,100) %>
-   </td>
-   <td>
-    <%= user.name %>
-    </td>
-    <td>
-    <%=link_to "Show", user_path(user.id) %>
-    </td>
-   </tr>
-  <% end %>
- </tbody>
-<table>
+   <tbody>
+    <% @users.each do |user| %>
+     <tr>
+      <td>
+      <%= image_tag user.get_profile_image(100,100) %>
+      </td>
+      <td>
+      <%= user.name %>
+      </td>
+      <td>
+      <%=link_to "Show", user_path(user.id) %>
+      </td>
+      </tr>
+     <% end %>
+   </tbody>
+  <table>
  
  </main>
  <!--フッターはapplication.html.erbに-->
- </body>
+</body>

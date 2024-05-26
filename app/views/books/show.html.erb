@@ -1,8 +1,5 @@
 books show(/books/book_id)
 <body>
- <header>
-     
- </header>
  <main>
  <!--新規投稿成功、投稿更新成功フラッシュメッセージ-->
   <div>
@@ -13,31 +10,41 @@ books show(/books/book_id)
   <%= render 'list', user:@user %>
 
  <!--右側ページ-->
+ 
   <h1>Books</h1>
-
-  <p><%= image_tag @user.get_profile_image(100,100) %></p>
-
-  </p><%= link_to @user.name, user_path(@user.id) %></p>
-
-  <h2>title</h2>
-  <p><%= @book.title %></p>
-
-  <h2>body</h2>
-  <p><%= @book.body %></p>
-
-<!--editとdestroy-->
-   <span>
-    <% if @book.user == current_user %>
-    <%= link_to "Edit",edit_book_path(@book) %>
-    <% end %>
-   </span>
-
-   <span>
-    <% if @book.user == current_user %>
-    <%= link_to "Destroy",book_path(@book), method: :delete, "data-confirm"=>"本当に消しますか？" %>
-    <% end %>
-   </span>
-  </main>
+  <table class="table">
+   <tbody>
+    <tr>
+     <td>
+      <%= image_tag @user.get_profile_image(100,100) %>
+     </td>
+     <td>
+      <p><%= link_to @user.name, user_path(@user.id) %></p>
+     </td>
+     <td>
+      <%= @book.title %>
+     </td>
+     <td>
+      <%= @book.body %>
+     </td>
+     <td>
+       <span>
+        <% if @book.user == current_user %>
+        <%= link_to "Edit",edit_book_path(@book) %>
+        <% end %>
+       </span>
+     </td>
+     <td>
+      <span>
+       <% if @book.user == current_user %>
+       <%= link_to "Destroy",book_path(@book), method: :delete, "data-confirm"=>"本当に消しますか？" %>
+       <% end %>
+      </span>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </main>
   <!--フッターはapplication.html.erbに-->
 </body>
  
