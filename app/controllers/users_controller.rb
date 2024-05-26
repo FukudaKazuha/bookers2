@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def index
     @users=User.all
     @user=current_user
-    # @user = User.find(params[:id])
+    # user = User.find(user_params[:id])
   end
   
   def show
