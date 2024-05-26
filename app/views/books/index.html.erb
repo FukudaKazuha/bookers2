@@ -1,50 +1,61 @@
 books index(/books)
 <body>
   <main>
+   <div class="container">
+    <div class="row">
+   
+     <div class="col-md-3">
   <!--新規投稿失敗バリデーション-->
-  <% if @book.errors.any? %>
-    <%= @book.errors.count %>errors
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
+     <% if @book.errors.any? %>
+     <%= @book.errors.count %>errors
+      <ul>
+       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+       <% end %>
+      </ul>
+     <% end %>
   <!--テンプレートファイルを呼び出す-->
-  <%= render 'list', user: @user %>
-  
+      <%= render 'list', user: @user %>
+     </div>
+     <!--左ページと右ページの隙間-->
+     <div class="offset-md-1"></div>
+     
+     <div class="col-md-8">
   <!--ここから右ページ-->
-  <h1>Books</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th colspan="1"></th>
-        <th>
+      <h1>Books</h1>
+      <table class="table">
+       <thead>
+        <tr>
+         <th colspan="1"></th>
+         <th>
           title
-        </th>
-        <th>
+         </th>
+         <th>
           body
-        </th>
-      </tr>
-    </thead>
+         </th>
+        </tr>
+       </thead>
   
-    <tbody>
-      <% @books.each do |book| %>
-      <tr>
-        <td>
-        <%= image_tag book.user.get_profile_image(100,100) %>
-        </td>
-        <td>
-          <%= link_to book.title, book_path(book.id) %>
-          <!--遷移先はbooksのshowページ　/books/id-->
-        </td>
-        <td>
-          <%= book.body %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+       <tbody>
+        <% @books.each do |book| %>
+         <tr>
+          <td>
+           <%= image_tag book.user.get_profile_image(100,100) %>
+          </td>
+          <td>
+           <%= link_to book.title, book_path(book.id) %>
+           <!--遷移先はbooksのshowページ　/books/id-->
+          </td>
+          <td>
+           <%= book.body %>
+          </td>
+         </tr>
+        <% end %>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
   </main>
 <!--フッターはapplication.html.erbに-->
  </body>
