@@ -15,7 +15,9 @@
 
   <body>
     <header>
+      <div class="container">
       <h1>Bookers</h1>
+      
       <!--ログインしている場合-->
       <% if user_signed_in? %>
         <li>
@@ -46,6 +48,7 @@
           <%= link_to "Log in ", new_user_session_path %>
         </li>
       <% end %>
+      </div>
     </header>
     
     <%= yield %>
