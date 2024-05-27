@@ -15,9 +15,9 @@ users show(/users/id)
      </div>
     
     <!--左ページと右ページの隙間-->
-    <div class="offset-md-1"></div>
+    <!--<div class="offset-md-1"></div>-->
     
-     <div class="col-md-8">
+     <div class="col-md-8 offset-md-1">
     <!--右側ページ-->
     <!--そのユーザーの投稿履歴-->
       <h1>Books</h1>
@@ -38,7 +38,9 @@ users show(/users/id)
         <% @books.each do |book| %>
         <tr>
           <td>
-          <%= image_tag @user.get_profile_image(100,100) %>
+           <%= link_to user_path(@user) do %>
+            <%= image_tag @user.get_profile_image(100,100)  %>
+           <% end %>
           </td>
           <td>
             <%= link_to book.title, book_path(book.id) %>
